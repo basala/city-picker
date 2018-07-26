@@ -1,7 +1,7 @@
 <template>
     <div class="city-abbr-nav-body">
         <div class="city-abbr-nav-list" @touchstart.stop.prevent="start" @touchmove.stop.prevent="move">
-            <div :class="navClass(item)" :data-name="item" v-for="item in navList" :key="item">{{item}}</div>
+            <div :class="navClass(abbr)" :city-abbr="abbr" v-for="abbr in navList" :key="abbr">{{abbr}}</div>
         </div>
     </div>
 </template>
@@ -33,15 +33,17 @@ export default {
             this.$emit('toElement', abbr)
         },
         start (event) {
-            let abbr = handleNavData(event.target, 'data-name')
+            // console.log('1')
+            let abbr = handleNavData(event.target, 'city-abbr')
             this.touch.start = event.touches[0].pageY
             this.touch.startIndex = getIndex(this.navList, abbr)
             this.scrollToElement(abbr)
         },
         move (event) {
+            // console.log('2')
             this.touch.end = event.touches[0].pageY
             let distance = this.touch.end - this.touch.start
-            this.touch.endIndex = Math.min(Math.max(this.touch.startIndex + Math.floor((distance + 10) / 20), 0), 22);
+            this.touch.endIndex = Math.min(Math.max(this.touch.startIndex + Math.floor(distance / 20), 0), 22);
             this.scrollToElement(this.navList[this.touch.endIndex])
         }
     }

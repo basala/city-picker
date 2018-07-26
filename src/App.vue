@@ -161,18 +161,25 @@ export default {
             this.setCity(this.choiceCityName)
         },
         toElement (text) {
+            // console.log(text)
             if (text === '顶') {
                 this.$refs.suggest.scrollTo(0, 0, 200)
             }
             this.elementIndex = text
+            // this.flagText = text
         },
         singleLetter (dom) {
             this.$refs.suggest.scrollToElement(dom, 200, false, -1)
         },
         distance (val) {
+            // console.log('hi ite me ')
+            if (val < 200) {
+                this.flagText = this.cityIndexList[0]
+                return false
+            }
             for (let i = 0, len = this.arrHeight.length; i < len; i++) {
                 if (val < this.arrHeight[i]) {
-                    this.flagText = this.cityIndexList[i]
+                    this.flagText = this.cityIndexList[i + 1]
                     return false
                 }
             }

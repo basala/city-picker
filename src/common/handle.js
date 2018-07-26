@@ -7,14 +7,10 @@ export function handleNavData (event, name, val) {
 }
 
 export function getIndex (arr, flag) {
-    let key
-    arr.map((val, index) => {
-        if (val === flag) {
-            key = index
-            return false
-        }
-    })
-  return key
+    // console.log(arr)
+    // console.log(flag)
+    // console.log(arr.indexOf(flag))
+    return arr.indexOf(flag)
 }
 
 export function getSearchList (text, list) {
@@ -45,7 +41,7 @@ export function getSearchList (text, list) {
 
 export function getDistance (arr) {
     let titleHeight = 30
-    let itemHeight = 35
+    let itemHeight = 40
     let distanceArr = []
     arr.map(function (item) {
         distanceArr.push(titleHeight + itemHeight * item[1].length)

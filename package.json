@@ -5,13 +5,18 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node --use_strict ./server/app.js | vue-cli-service serve"
   },
   "dependencies": {
     "vue": "^2.5.16",
     "axios": "^0.18.0",
     "better-scroll": "^1.8.4",
-    "fastclick": "^1.0.6"
+    "fastclick": "^1.0.6",
+    "koa": "2.0.0",
+    "koa-bodyparser": "3.2.0",
+    "koa-router": "7.0.0",
+    "request": "2.81.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-rc.5",
