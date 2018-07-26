@@ -8,13 +8,19 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "axios": "^0.18.0",
+    "better-scroll": "^1.8.4",
+    "fastclick": "^1.0.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-rc.5",
     "@vue/cli-plugin-eslint": "^3.0.0-rc.5",
     "@vue/cli-service": "^3.0.0-rc.5",
-    "vue-template-compiler": "^2.5.16"
+    "vue-template-compiler": "^2.5.16",
+    "url-loader": "^0.5.8",
+    "vue-loader": "^14.2.2",
+    "vue-style-loader": "^3.0.1"
   },
   "eslintConfig": {
     "root": true,
