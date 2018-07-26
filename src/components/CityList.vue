@@ -25,6 +25,8 @@ export default {
             if (val === '顶') {
                 return false
             }
+            // console.log(this.$refs)
+            // console.log(this.$refs[val][0])
             this.$emit('singleLetter', this.$refs[val][0])
         }
     }

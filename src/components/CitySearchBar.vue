@@ -58,11 +58,10 @@ export default {
     box-sizing: border-box;
     width: 100%;
     border-radius: 20px;
-    padding: 0 10px;
+    padding-left: 40px;
     font-size: 20px;
     line-height: 40px;
     border: none;
     outline: none;
-    padding-left: 40px;
 }
 </style>

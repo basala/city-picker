@@ -173,13 +173,10 @@ export default {
         },
         distance (val) {
             // console.log('hi ite me ')
-            if (val < 200) {
-                this.flagText = this.cityIndexList[0]
-                return false
-            }
             for (let i = 0, len = this.arrHeight.length; i < len; i++) {
                 if (val < this.arrHeight[i]) {
-                    this.flagText = this.cityIndexList[i + 1]
+                    this.flagText = this.cityIndexList[i]
+                    // console.log(this.flagText)
                     return false
                 }
             }

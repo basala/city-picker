@@ -47,10 +47,13 @@ export default {
             })
             if (this.listenScroll) {
                 this.scroll.on('scrollStart', () => {
+                    // console.log('scrollstart')
                 this.$emit('scrollStore', true)
                 })
                 this.scroll.on('scroll', (pos) => {
-                    this.$emit('distance', Math.abs(pos.y))
+                    // console.log('scroll')
+                    // console.log(Math.abs(pos.y))
+                    this.$emit('distance', Math.abs(pos.y) + 10)
                     this.$emit('scrollStore', true)
                 })
                 this.scroll.on('scrollEnd', () => {
@@ -69,7 +72,7 @@ export default {
         }
     },
     watch: {
-        data (val) {
+        data () {
             setTimeout(() => {
                 this.refresh()
             }, 20)
